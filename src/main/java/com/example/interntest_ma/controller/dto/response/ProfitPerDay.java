@@ -9,5 +9,5 @@ import lombok.experimental.FieldDefaults;
 public class ProfitPerDay {
     Long day;
 
-    Long profit;
+    Float profit;
 }

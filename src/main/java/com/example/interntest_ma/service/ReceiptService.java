@@ -6,6 +6,7 @@ import com.example.interntest_ma.controller.dto.response.ProfitPerDay;
 import com.example.interntest_ma.entity.Receipt;
 import com.example.interntest_ma.repository.ReceiptRepository;
 import lombok.AllArgsConstructor;
+
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -33,24 +34,24 @@ public class ReceiptService {
         } else {
             receipts = receiptRepository.findAllByIdBetweenAndActiveIsTrue(24L, 30L);
         }
-        Long profit = calculateProfit(receipts);
+        Float profit = calculateProfit(receipts);
         return "Profit in week" + request.getWeek() + ": " + profit;
     }
 
-//    public ProfitAllDaysResponse getProfitAllDays() {
-//        List<Receipt> receipts = receiptRepository.findAll();
-//        ProfitAllDaysResponse response = new ProfitAllDaysResponse();
-//        response.setProfits(receipts.stream().map(r -> {
-//            ProfitPerDay profitPerDay = new ProfitPerDay();
-//            profitPerDay.setDay(r.getId());
-//            profitPerDay.setProfit(r.getGoodRices() / 5 * 3 / 10 * 18000);
-//            return profitPerDay;
-//        }).collect(Collectors.toList()));
-//        return response;
-//    }
+    public ProfitAllDaysResponse getProfitAllDays() {
+        List<Receipt> receipts = receiptRepository.findAll();
+        ProfitAllDaysResponse response = new ProfitAllDaysResponse();
+        response.setProfits(receipts.stream().map(r -> {
+            ProfitPerDay profitPerDay = new ProfitPerDay();
+            profitPerDay.setDay(r.getId());
+            profitPerDay.setProfit(r.getGoodRices() / 5 * 3 / 10 * 18000);
+            return profitPerDay;
+        }).collect(Collectors.toList()));
+        return response;
+    }
 
-    private Long calculateProfit(List<Receipt> receipts) {
-        Long sumGoodRice= 0L;
+    private Float calculateProfit(List<Receipt> receipts) {
+        Float sumGoodRice= 0.0F;
         for (int i =0; i< receipts.size(); i++) {
             sumGoodRice = sumGoodRice + receipts.get(i).getGoodRices();
         }

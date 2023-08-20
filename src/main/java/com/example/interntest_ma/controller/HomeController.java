@@ -1,9 +1,11 @@
 package com.example.interntest_ma.controller;
 
 import com.example.interntest_ma.controller.dto.ProfitPerWeek;
+import com.example.interntest_ma.controller.dto.response.ProfitAllDaysResponse;
 import com.example.interntest_ma.controller.dto.response.ProfitPerDay;
 import com.example.interntest_ma.service.ReceiptService;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,9 +21,9 @@ public class HomeController {
         return ResponseEntity.ok(receiptService.getProfitPerWeek(request));
     }
 
-//    @GetMapping("/day")
-//    public ResponseEntity<ProfitPerDay> getProfitAllDays() {
-//        return ResponseEntity.ok(receiptService.getProfitAllDays());
-//
-//    }
+    @GetMapping("/day")
+    public ResponseEntity<ProfitAllDaysResponse> getProfitAllDays() {
+        return ResponseEntity.ok(receiptService.getProfitAllDays());
+
+    }
 }
