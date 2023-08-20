@@ -1,10 +1,10 @@
-package com.example.interntest_ma.service;
+package com.example.interntest.service;
 
-import com.example.interntest_ma.controller.dto.ProfitPerWeek;
-import com.example.interntest_ma.controller.dto.response.ProfitAllDaysResponse;
-import com.example.interntest_ma.controller.dto.response.ProfitPerDay;
-import com.example.interntest_ma.entity.Receipt;
-import com.example.interntest_ma.repository.ReceiptRepository;
+import com.example.interntest.controller.dto.ProfitPerWeek;
+import com.example.interntest.controller.dto.response.ProfitAllDaysResponse;
+import com.example.interntest.controller.dto.response.ProfitPerDay;
+import com.example.interntest.entity.Receipt;
+import com.example.interntest.repository.ReceiptRepository;
 import lombok.AllArgsConstructor;
 
 import lombok.extern.slf4j.Slf4j;

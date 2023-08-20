@@ -1,4 +1,4 @@
-package com.example.interntest_ma;
+package com.example.interntest;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

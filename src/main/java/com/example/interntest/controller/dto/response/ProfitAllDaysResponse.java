@@ -1,4 +1,4 @@
-package com.example.interntest_ma.controller.dto.response;
+package com.example.interntest.controller.dto.response;
 
 
 import lombok.AccessLevel;

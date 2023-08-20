@@ -1,4 +1,4 @@
-package com.example.interntest_ma.controller.dto;
+package com.example.interntest.controller.dto.response;
 
 import lombok.AccessLevel;
 import lombok.Data;
@@ -6,6 +6,8 @@ import lombok.experimental.FieldDefaults;
 
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class ProfitPerWeek {
-    Long week;
+public class ProfitPerDay {
+    Long day;
+
+    Float profit;
 }

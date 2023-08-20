@@ -1,6 +1,6 @@
-package com.example.interntest_ma.repository;
+package com.example.interntest.repository;
 
-import com.example.interntest_ma.entity.Receipt;
+import com.example.interntest.entity.Receipt;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
